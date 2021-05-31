@@ -1,21 +1,23 @@
 console.log("welcome to employee wage");
-const Is_Present = 1;
-let emphr=0 ;
-const wage_per_hr = 20;
+const IS_PRESENT= 1;
+const PART_TIME_HOUR = 4;
+const FULL_TIME_HOUR = 8;
+const WAGE_PER_HOUR= 20;
 let empCheck = Math.floor(Math.random()*3);
-switch(empCheck) {
-    case 0:
-    console.log("employee is abscent");
-    emphr = 0;
-    break;
-    case 1:
-    console.log("employee is full time");
-    emphr = 8;
-    break;
-    case 2:
-    console.log("employee is part time");
-    emphr = 4;
-    break;
+
+function getWorkingHours(empCheck) {
+    switch (empCheck) {
+        case 1:
+            return FULL_TIME_HOUR;
+            break;
+        case 2:
+            return PART_TIME_HOUR;    
+        default:
+            return 0;
+            break;
+    }
+    
 }
-let dailyWage = wage_per_hr * emphr;
-console.log("total daily wage of a employee is:"+dailyWage)
+emphr = getWorkingHours(empCheck);
+let empWage = emphr * WAGE_PER_HOUR;
+console.log("employee wage:"+empWage);
