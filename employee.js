@@ -139,3 +139,14 @@ empDailyHrsMap.forEach( (values , key ,map) => {
 console.log("Full Working Days: " +fullWorkingDays);
 console.log("Part Working Days: " +partWorkingDays);
 console.log("Non Working Days: " +nonWorkingDays);
+
+ //uc-10
+    empDailyHrsAndWageArr.push({
+        dayNum:totalWorkingDays,
+        dailyHours:empHrs,
+        dailyWage:calcDailyWage(empHrs),
+        toString(){
+            return '\n Day ' + this.dayNum + ' => Working Hour is ' + this.dailyHours +
+                                    'And Wage Earned = ' + this.dailyWage
+        },
+    });
